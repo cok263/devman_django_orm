@@ -1,2 +1,3 @@
 .replit
 project/.env
+__pycache__/
