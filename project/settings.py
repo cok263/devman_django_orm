@@ -1,9 +1,8 @@
 import os
-from dotenv import load_dotenv
 from environs import Env
 
-load_dotenv()
 env = Env()
+env.read_env()
 
 DATABASES = {
     'default': {
@@ -11,14 +10,14 @@ DATABASES = {
         'HOST': 'checkpoint.devman.org',
         'PORT': '5434',
         'NAME': 'checkpoint',
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
     }
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env.bool('DEBUG', False)
 
