@@ -10,6 +10,10 @@
 ### Как установить
 
 Файле projects/.env должен содержать информацию для подключения к БД и содержать такие параметры:
+- DB_ENGINE = django.db.backends.postgresql_psycopg2(используемая БД)
+- DB_HOST = checkpoint.devman.org(имя сервера БД)
+- DB_PORT = 5434(порт для подключения к БД)
+- DB_NAME = checkpoint(имя используемой БД)
 - DB_USER(имя пользователя БД)
 - DB_PASSWORD(пароль пользователя БД)
 - SECRET_KEY(секретный ключ)
@@ -17,8 +21,13 @@
 
 Пример .env
 ```
+DB_ENGINE = django.db.backends.postgresql_psycopg2
+DB_HOST = checkpoint.devman.org
+DB_PORT = 5434
+DB_NAME = checkpoint
 DB_USER = user
 DB_PASSWORD = password
+
 SECRET_KEY = secret_key
 DEBUG = false
 ```
